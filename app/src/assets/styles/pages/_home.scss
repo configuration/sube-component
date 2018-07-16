@@ -1,0 +1,191 @@
+.content-root{
+  .content-container{
+    width: 100%;
+    max-width: 1200px;
+    margin: 0 auto;
+
+    .filter-container{
+      .filter-block{
+        .input-block{
+          margin: 0 0 10px 0;
+
+          label{
+            min-width: 200px;
+            display: inline-block;
+          }
+
+          input[type='text']{
+            border:2px solid $red;
+            border-radius: 50px;
+            padding: 5px;
+          }
+          input[type='button']{
+            border: 2px solid $black;
+            background-color: $white;
+            color: $black;
+            border-radius: 50px;
+            padding: 5px 10px;
+            margin: 0 0 0 30px;
+            transition: all 0.3s ease 0s;
+
+            &:hover{
+              background-color: $darkGray;
+              border-color: $darkGray;
+              color: $white;
+
+            }
+          }
+          select{
+            border-radius: 50px;
+            border:2px solid $red;
+            padding: 5px;
+
+            option{
+              &.closed{
+                color: $red;
+              }
+            }
+          }
+
+          .autocomplete-result-block{
+            background-color: $white;
+            border: 2px solid $red;
+            border-radius: 5px;
+            left: 200px;
+            position: relative;
+            padding: 10px;
+            top: 10px;
+            //max-width: 650px;
+            //display: inline-block;
+            width: max-content;
+            max-height: 200px;
+            overflow-y: scroll;
+
+            .autocomplete-result-item{
+              cursor: pointer;
+
+              &.closed {
+                color: $red;
+              }
+              &.active{
+                color: $white;
+                background-color: $darkGray;
+              }
+              &:hover{
+                color: $white;
+                background-color: $darkGray;
+              }
+
+            }
+          }
+        }
+      }
+    }
+
+    .sube-detail-container{
+      .sube-detail-block{
+        .sube-detail-item{
+          opacity: 0;
+
+          span{
+
+          }
+        }
+
+        @keyframes fadeAnim {
+          100% { opacity: 1; }
+        }
+        .sube-detail-item{
+          animation: fadeAnim .5s forwards;
+        }
+
+        @for $i from 1 to 200 {
+          .sube-detail-item:nth-child(#{$i}) {
+            animation-delay: $i * 0.03s;
+          }
+        }
+      }
+      .sube-detail-button-block{
+        margin: 10px 0;
+
+        input[type='button']{
+          border: 2px solid $black;
+          background-color: $white;
+          color: $black;
+          border-radius: 50px;
+          padding: 5px 10px;
+          margin: 0 30px 0 0;
+          transition: all 0.3s ease 0s;
+
+          &:hover{
+            background-color: $darkGray;
+            border-color: $darkGray;
+            color: $white;
+          }
+        }
+      }
+    }
+    .modal {
+      display: block;
+      position: fixed;
+      z-index: 1;
+      padding-top: 100px;
+      left: 0;
+      top: 0;
+      width: 100%;
+      height: 100%;
+      overflow: auto;
+      background-color: rgb(0,0,0);
+      background-color: rgba(0,0,0,0.4);
+
+      .modal-content {
+        position: relative;
+        background-color: #fefefe;
+        margin: auto;
+        padding: 0;
+        border: 1px solid #888;
+        width: 80%;
+        box-shadow: 0 4px 8px 0 rgba(0,0,0,0.2),0 6px 20px 0 rgba(0,0,0,0.19);
+        -webkit-animation-name: animatetop;
+        -webkit-animation-duration: 0.4s;
+        animation-name: animatetop;
+        animation-duration: 0.4s
+      }
+
+      @-webkit-keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+      }
+
+      @keyframes animatetop {
+        from {top:-300px; opacity:0}
+        to {top:0; opacity:1}
+      }
+
+
+      .close {
+        color: white;
+        float: right;
+        font-size: 28px;
+        font-weight: bold;
+      }
+
+      .close:hover,
+      .close:focus {
+        color: #000;
+        text-decoration: none;
+        cursor: pointer;
+      }
+
+      .modal-header {
+        padding: 2px 16px;
+        background-color: $red;
+        color: white;
+      }
+
+      .modal-body {padding: 2px 16px;}
+    }
+  }
+}
+
+
