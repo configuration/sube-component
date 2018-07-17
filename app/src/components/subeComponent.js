@@ -330,7 +330,7 @@ class SubeComponent extends Component {
 
                                         <div className="input-block">
                                             <label>Şube Adı</label>
-                                            <select onClick={this.onChangeSube}
+                                            <select onChange={this.onChangeSube}
                                                     ref={this.refSelectSube}
                                             >
                                                 <option value="">Seçiniz</option>
