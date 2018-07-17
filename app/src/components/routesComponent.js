@@ -9,6 +9,7 @@ class RoutesComponent extends Component {
             <section className="content-root">
                 <Switch>
 
+                    {/*<Route exact path="/app" component={HomePage}/>*/}
                     <Route exact path="/" component={HomePage}/>
 
                 </Switch>

@@ -27,6 +27,8 @@ class SubeComponent extends Component {
 
     activeAutoCompleteNo = -1;
 
+    isLoading = true;
+
     constructor(props) {
         super(props);
         props.dispatch(getData())
@@ -38,6 +40,9 @@ class SubeComponent extends Component {
                         // console.dir(result);
                         props.dispatch(dataResult(result));
                     });
+
+                    this.isLoading = false;
+                    this.forceUpdate();
                 }
             });
     }
@@ -93,15 +98,9 @@ class SubeComponent extends Component {
         return true;
     }
 
-    componentWillReceiveProps(nextProps) {
-
-    }
-
     //todo : autocomplete
     onKeyUp = (e) => {
         this.shownValsAutoComplete = [];
-        // console.log("this.refAutoComplete.current.value " , this.refAutoComplete.current.value.length)
-
 
         if (this.refAutoComplete.current.value.length > 0) {
 
@@ -111,13 +110,14 @@ class SubeComponent extends Component {
 
                 let regData = new RegExp(inputVal);
                 if (regData.test(data)) {
-                    return x
+                    return x;
                 }
             });
             this.forceUpdate()
         }
         else{
             this.shownValsAutoComplete = [];
+            this.forceUpdate();
         }
     };
 
@@ -137,8 +137,6 @@ class SubeComponent extends Component {
             this.selectedCityNo = e.target.value;
 
             this.props.subeData.filter(val => {
-                // console.log("this.selectedCityNo " ,this.selectedCityNo);
-                // if(val.Sube_Il_Kd && val.Sube_Il_Kd[0] && val.Sube_Il_Kd.toString()){
                 if (val.Sube_Il_Kd && val.Sube_Il_Kd[0]) {
                     if (val.Sube_Il_Kd.toString() == this.selectedCityNo) {
                         this.manipulatedSubeDataArr.push(val);
@@ -217,8 +215,6 @@ class SubeComponent extends Component {
     };
 
     onWindowKeyDown = (event) => {
-        // console.log(event.keyCode);
-
         if(this.shownValsAutoComplete &&this.shownValsAutoComplete.length > 0){
             if(event.keyCode === 40){
                 // this.refAutoComplete.current.blur();
@@ -252,6 +248,10 @@ class SubeComponent extends Component {
                 }
             }
         }
+
+        if(event.keyCode === 27 && this.errorMessage){
+            this.closeModal();
+        }
     };
 
     //todo : back to filters screen
@@ -284,11 +284,9 @@ class SubeComponent extends Component {
         return (
             <Fragment>
                 <header>
-                    <div className="safe-area">
-                        <h1>ŞUBE ARAMA</h1>
-                        <h2>Aradığınız şubenin şube kodu ile arama yapabilir, ya da direkt şubeyi seçerek bilgilerini
-                            getirebilirsiniz.</h2>
-                    </div>
+                    <h1>ŞUBE ARAMA</h1>
+                    <h2>Aradığınız şubenin şube kodu ile arama yapabilir, şube adı/ili/kod bilgileri ile sorgulayabilir
+                        ya da il filtresini kullanarak istediğiniz ildeki şubeyi seçip bilgilerini getirebilirsiniz.</h2>
                 </header>
 
                 <section className="content-container">
@@ -468,6 +466,20 @@ class SubeComponent extends Component {
 
                     </div>
                     }
+
+                    {this.isLoading === true &&
+                    <div className="modal">
+
+                        <div className="modal-content">
+                            <div className="modal-body">
+                                <p>Yükleniyor...</p>
+                            </div>
+
+                        </div>
+
+                    </div>
+                    }
+
                 </section>
 
             </Fragment>

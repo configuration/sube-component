@@ -14,7 +14,11 @@ body{
 
 h1,h2,h3 {
   color: $white;
-  padding: 0  0 20px 10px;
+  //padding: 0  0 20px 10px;
+}
+
+h1{
+  margin: 0 0 10px 0;
 }
 
 p,span{
@@ -23,7 +27,7 @@ p,span{
 
 header {
   background-color: $red;
-  padding: 10px 0;
+  padding: 10px;
   margin: 0 0 10px 0;
 }
 

@@ -2,7 +2,6 @@
   header {
     padding: 10px;
   }
-
   .content-root{
     .content-container{
       padding: 10px;
@@ -88,13 +87,405 @@
       }
     }
   }
-
-
-
 }
 @media only screen and (max-width: 1050px) {}
-@media only screen and (max-width: 990px) {}
-@media only screen and (max-width: 850px) {}
-@media only screen and (max-width: 640px) {}
-@media only screen and (max-width: 460px) {}
+@media only screen and (max-width: 990px) {
+  h1{
+    font-size: 1.4em;
+  }
+  h2{
+    font-size: 1.2em;
+  }
+
+  .content-root{
+    .content-container{
+      padding: 15px;
+
+      .filter-container{
+        .filter-block{
+          .input-block{
+
+            label{
+              //font-size: 0.8em;
+            }
+
+            input[type='text']{
+            }
+            input[type='button']{
+              margin: 0 0 0 15px;
+              &:hover{
+              }
+            }
+            select{
+              option{
+                &.closed{
+                }
+              }
+            }
+
+            .autocomplete-result-block{
+              .autocomplete-result-item{
+
+                &.closed {
+                }
+                &.active{
+                }
+                &:hover{
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      .sube-detail-container{
+        .sube-detail-block{
+          .sube-detail-item{
+            span{
+
+            }
+          }
+
+          @keyframes fadeAnim {
+          }
+          .sube-detail-item{
+          }
+
+          @for $i from 1 to 200 {
+            .sube-detail-item:nth-child(#{$i}) {
+            }
+          }
+        }
+        .sube-detail-button-block{
+
+          input[type='button']{
+            &:hover{
+            }
+          }
+        }
+      }
+      .modal {
+        .modal-content {
+        }
+
+        .close {
+        }
+
+        .close:hover,
+        .close:focus {
+        }
+
+        .modal-header {
+        }
+
+        .modal-body {
+        }
+      }
+    }
+  }
+
+}
+@media only screen and (max-width: 850px) {
+  h1{
+  }
+  h2{
+  }
+
+  .content-root{
+    .content-container{
+      padding: 15px;
+
+      .filter-container{
+        .filter-block{
+          .input-block{
+
+            label{
+              //font-size: 0.8em;
+            }
+
+            input[type='text']{
+            }
+            input[type='button']{
+              &:hover{
+              }
+            }
+            select{
+              option{
+                &.closed{
+                }
+              }
+            }
+
+            .autocomplete-result-block{
+              //left: 0;
+              max-width: 220px;
+              .autocomplete-result-item{
+
+                &.closed {
+                }
+                &.active{
+                }
+                &:hover{
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      .sube-detail-container{
+        .sube-detail-block{
+          .sube-detail-item{
+            span{
+
+            }
+          }
+
+          @keyframes fadeAnim {
+          }
+          .sube-detail-item{
+          }
+
+          @for $i from 1 to 200 {
+            .sube-detail-item:nth-child(#{$i}) {
+            }
+          }
+        }
+        .sube-detail-button-block{
+
+          input[type='button']{
+            &:hover{
+            }
+          }
+        }
+      }
+      .modal {
+        .modal-content {
+        }
+
+        .close {
+        }
+
+        .close:hover,
+        .close:focus {
+        }
+
+        .modal-header {
+        }
+
+        .modal-body {
+        }
+      }
+    }
+  }
+
+}
+
+@media only screen and (max-width: 640px) {
+  h1{
+    font-size: 1.2em;
+  }
+  h2{
+    font-size: 1em;
+  }
+
+  .content-root{
+    .content-container{
+      padding: 15px;
+
+      .filter-container{
+        .filter-block{
+          .input-block{
+
+            label{
+              min-width: 140px;
+              font-size: 0.8em;
+            }
+
+            input[type='text']{
+              font-size: 0.8em;
+            }
+            input[type='button']{
+              font-size: 0.8em;
+              &:hover{
+              }
+            }
+            select{
+              font-size: 0.8em;
+              min-width: 160px;
+              max-width: 160px;
+              option{
+                &.closed{
+                }
+              }
+            }
+
+            .autocomplete-result-block{
+
+                max-width: 200px;
+                left:145px;
+              .autocomplete-result-item{
+                font-size: 0.8em;
+                &.closed {
+                }
+                &.active{
+                }
+                &:hover{
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      .sube-detail-container{
+        .sube-detail-block{
+          .sube-detail-item{
+            span{
+
+            }
+          }
+
+          @keyframes fadeAnim {
+          }
+          .sube-detail-item{
+          }
+
+          @for $i from 1 to 200 {
+            .sube-detail-item:nth-child(#{$i}) {
+            }
+          }
+        }
+        .sube-detail-button-block{
+
+          input[type='button']{
+            margin: 10px 0;
+            &:hover{
+            }
+          }
+        }
+      }
+      .modal {
+        .modal-content {
+        }
+
+        .close {
+        }
+
+        .close:hover,
+        .close:focus {
+        }
+
+        .modal-header {
+        }
+
+        .modal-body {
+        }
+      }
+    }
+  }
+}
+@media only screen and (max-width: 460px) {
+  h1{
+    //font-size: 1.2em;
+  }
+  h2{
+    //font-size: 1em;
+  }
+
+  .content-root{
+    .content-container{
+      padding: 15px;
+
+      .filter-container{
+        .filter-block{
+          .input-block{
+
+            label{
+              display: block;
+            }
+
+            input[type='text']{
+            }
+            input[type='button']{
+              display: block;
+              margin: 10px 0 0 0;
+
+              &:hover{
+              }
+            }
+            select{
+              option{
+                &.closed{
+                }
+              }
+            }
+
+            .autocomplete-result-block{
+              left:0;
+              .autocomplete-result-item{
+
+                &.closed {
+                }
+                &.active{
+                }
+                &:hover{
+                }
+
+              }
+            }
+          }
+        }
+      }
+
+      .sube-detail-container{
+        .sube-detail-block{
+          .sube-detail-item{
+            span{
+
+            }
+          }
+
+          @keyframes fadeAnim {
+          }
+          .sube-detail-item{
+          }
+
+          @for $i from 1 to 200 {
+            .sube-detail-item:nth-child(#{$i}) {
+            }
+          }
+        }
+        .sube-detail-button-block{
+
+          input[type='button']{
+            &:hover{
+            }
+          }
+        }
+      }
+      .modal {
+        .modal-content {
+        }
+
+        .close {
+        }
+
+        .close:hover,
+        .close:focus {
+        }
+
+        .modal-header {
+        }
+
+        .modal-body {
+        }
+      }
+    }
+  }
+}
+
 @media only screen and (max-width: 380px) {}

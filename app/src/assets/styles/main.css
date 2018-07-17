@@ -4,11 +4,11 @@
   margin: 0 auto; }
 
 ::-webkit-scrollbar-track {
-  background-color: #000; }
+  background-color: #333333; }
 
 ::-webkit-scrollbar {
-  width: 2px;
-  background-color: #000; }
+  width: 5px;
+  background-color: #333333; }
 
 ::-webkit-scrollbar-thumb {
   background-color: #ffffff;
@@ -20,7 +20,7 @@
   right: 1px;
   top: 0;
   width: 6px;
-  background-color: #000000; }
+  background-color: #333333; }
   .track-vertical.phone {
     right: 0; }
 
@@ -237,7 +237,9 @@ table {
     .content-root .content-container .filter-container .filter-block .input-block select {
       border-radius: 50px;
       border: 2px solid #E10514;
-      padding: 5px; }
+      padding: 5px;
+      min-width: 196px;
+      max-width: 196px; }
       .content-root .content-container .filter-container .filter-block .input-block select option.closed {
         color: #E10514; }
     .content-root .content-container .filter-container .filter-block .input-block .autocomplete-result-block {
@@ -741,6 +743,59 @@ table {
 
   .content-root .content-container {
     padding: 10px; } }
+@media only screen and (max-width: 990px) {
+  h1 {
+    font-size: 1.4em; }
+
+  h2 {
+    font-size: 1.2em; }
+
+  .content-root .content-container {
+    padding: 15px; }
+    .content-root .content-container .filter-container .filter-block .input-block input[type='button'] {
+      margin: 0 0 0 15px; } }
+@media only screen and (max-width: 850px) {
+  .content-root .content-container {
+    padding: 15px; }
+    .content-root .content-container .filter-container .filter-block .input-block .autocomplete-result-block {
+      max-width: 220px; } }
+@media only screen and (max-width: 640px) {
+  h1 {
+    font-size: 1.2em; }
+
+  h2 {
+    font-size: 1em; }
+
+  .content-root .content-container {
+    padding: 15px; }
+    .content-root .content-container .filter-container .filter-block .input-block label {
+      min-width: 140px;
+      font-size: 0.8em; }
+    .content-root .content-container .filter-container .filter-block .input-block input[type='text'] {
+      font-size: 0.8em; }
+    .content-root .content-container .filter-container .filter-block .input-block input[type='button'] {
+      font-size: 0.8em; }
+    .content-root .content-container .filter-container .filter-block .input-block select {
+      font-size: 0.8em;
+      min-width: 160px;
+      max-width: 160px; }
+    .content-root .content-container .filter-container .filter-block .input-block .autocomplete-result-block {
+      max-width: 200px;
+      left: 145px; }
+      .content-root .content-container .filter-container .filter-block .input-block .autocomplete-result-block .autocomplete-result-item {
+        font-size: 0.8em; }
+    .content-root .content-container .sube-detail-container .sube-detail-button-block input[type='button'] {
+      margin: 10px 0; } }
+@media only screen and (max-width: 460px) {
+  .content-root .content-container {
+    padding: 15px; }
+    .content-root .content-container .filter-container .filter-block .input-block label {
+      display: block; }
+    .content-root .content-container .filter-container .filter-block .input-block input[type='button'] {
+      display: block;
+      margin: 10px 0 0 0; }
+    .content-root .content-container .filter-container .filter-block .input-block .autocomplete-result-block {
+      left: 0; } }
 body {
   background-color: #ffffff;
   font-size: 1em;
@@ -748,15 +803,17 @@ body {
   font-weight: normal; }
 
 h1, h2, h3 {
-  color: #ffffff;
-  padding: 0  0 20px 10px; }
+  color: #ffffff; }
+
+h1 {
+  margin: 0 0 10px 0; }
 
 p, span {
   color: #000000; }
 
 header {
   background-color: #E10514;
-  padding: 10px 0;
+  padding: 10px;
   margin: 0 0 10px 0; }
 
 a {
