@@ -48,15 +48,7 @@ class SubeComponent extends Component {
     }
 
     componentDidMount() {
-        /*
-                setTimeout(()=>{
-                    this.refInputSubeKod.current.value = 2461;
-                    this.getSubeBySubeKodu();
-                },1000)
-        */
-
         document.addEventListener('keydown', this.onWindowKeyDown)
-
     }
 
     componentWillUnmount() {
@@ -74,19 +66,8 @@ class SubeComponent extends Component {
                 let subeKod = sube.Sube_Sube_Kd;
                 let subeIsim = Helper.getCityNameByNo(sube.Sube_Il_Kd);
 
-/*
-                let obj = {
-                    val: subeAd + "-" + subeKod + "-" + subeIsim,
-                    text: subeKod
-                };
-*/
-
                 let val = subeAd + "-" + subeKod + "-" + subeIsim;
-
                 sube.combinedAutoCompleteVal = val;
-
-                // this.autoCompleteData.push(obj);
-
                 this.autoCompleteData.push(sube);
             }
 
@@ -159,8 +140,6 @@ class SubeComponent extends Component {
         this.selectedSubeName = e.target.value;
 
         this.props.subeData.forEach((sube, i) => {
-            // console.log("1 " ,sube.Sube_Adi_Ad[0]);
-            // console.log("2 " ,this.selectedSubeName);
             if (this.selectedSubeName === sube.Sube_Adi_Ad[0]) {
                 if (sube.Sube_KapanisTarihi_Tr) {
                     this.errorMessage = "Aradığınız şube kapalıdır";
@@ -169,7 +148,6 @@ class SubeComponent extends Component {
                 }
                 else {
                     this.selectedSubeObj = sube;
-                    // console.log("selected sube ", this.selectedSubeObj);
                     this.forceUpdate();
                 }
             }
@@ -235,8 +213,6 @@ class SubeComponent extends Component {
                 console.log("up");
             }
             else if(event.keyCode === 13){
-                // console.log("this.activeAutoCompleteNo " , this.activeAutoCompleteNo );
-
                 if(this.activeAutoCompleteNo > -1){
                     if(this.shownValsAutoComplete[this.activeAutoCompleteNo].Sube_KapanisTarihi_Tr) {
                         this.errorMessage = "Aradığını şube kapalıdır.";
@@ -355,7 +331,6 @@ class SubeComponent extends Component {
                                                    }}
                                             />
 
-                                            {/*<span>BULUNAN ŞUBE SAYISI : {this.shownValsAutoComplete.length}</span>*/}
                                             {(this.shownValsAutoComplete && this.shownValsAutoComplete.length > 0) &&
 
                                             <div className="autocomplete-result-block">
